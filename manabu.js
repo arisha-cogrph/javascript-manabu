@@ -8,6 +8,13 @@ let lastName = 'Bravo';
 let age = '37';
 console.log(firstName + " " + lastName + " " + 'is' + " " + age + " " + 'years' + " " + 'old');
 //to add space between words add (" ")
+console.log(`${firstName}${lastName} 'is' ${age} 'years' 'old`);
+
+
+
+
+
+
 
 //Data types (データ型)
 //Question 1 変数 isRaining を作成し、true を代入してください。
@@ -26,33 +33,35 @@ console.log(typeof biodata); //how to type array "typeof"
 console.log(4 + 4);
 
 //Question 2 論理演算子を使って、ある数字が3と5の両方で割り切れるかどうかをチェックするプログラムを書いてください。
-let number = parseInt(prompt("2"));
+// let number = parseInt(prompt("2"));
+//promt input is always string. if you want to change it into interger (parseInt) converst string to integer
+//
+// if (number % 3 === 0 && number % 5 === 0) {
+//     console.log(number + "is divisible by both 3 and 5");
+// } else {
+//     console.log(number + "is not divisible by both 3 and 5");
+// }
 
-if (number % 3 === 0 && number % 5 === 0) {
-    console.log(number + "is divisible by both 3 and 5");
-} else {
-    console.log(number + "is not divisible by both 3 and 5");
-}
+// let pi = 3.14159265358979323846;
 
-let pi = 3.14159265358979323846;
+
 
 //コメント
 //円の面積を計算するプログラムを書いてください。各ステップを説明するコメントを追加してください。
 
-// Function to calculate the area of circle 
-function findArea(r) {
-    return (pi * r * r);
+// Function to calculate the area of circle
+function myFunction() {
+    console.log('hello 12345');
+}
+myFunction();
+
+//you can use function anytime anywhere however much
+function myAdd(x, y) {
+    console.log(x + y);
 }
 
-// Driver code 
-let r, Area;
-r = 5;
+myAdd(30, 4)
 
-// Function calling 
-Area = findArea(r);
-
-// displaying the area 
-console.log("Area of Circle is: " + Area);
 
 //Question 2 ある数字の階乗を計算するプログラムを書いてください。ロジックを説明するコメントを追加してください。
 //factorial is a math operation that involves multiplying a number by every whole number less than it, down to 1.
@@ -68,4 +77,79 @@ function fact(n) {
 console.log(fact(5));
 //
 
+//5.条件文
+//Question 1 
+//ある数字が正か負かをチェックするプログラムを書いてください。
+function checkNumber(num) {
+    if (num > 0) {
+        console.log('The number is positive');
+    } else if (num < 0) {
+        console.log('The number is negative');
+    } else {
+        console.log('The number is zero');
+    }
+}
+
+checkNumber(8);
+checkNumber(-10);
+checkNumber(0);
+
+//Question 2
+//ある数字が3で割り切れる場合は "Fizz"、5で割り切れる場合は
+// "Buzz"、両方で割り切れる場合は "FizzBuzz" を出力するプログラムを書いてください
+
+function checkDivision(num) {
+    if (num % 3 === 0 && num % 5 === 0); {
+        console.log("FizzBuzz");
+    } if (num % 3 === 0) {
+        console.log("Fizz");
+    } else if (num % 5 === 0) {
+        console.log("Buzz");
+    } else {
+        console.log(num);
+    }
+}
+
+checkDivision(5);
+checkDivision(398);
+checkDivision(49587);
+
+
+//ループ
+//Question 1 for ループを使って、1から10までの数字を出力してください。
+
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+//Question 2 Use a while loop to find the sum of all even numbers between 1 and 50.
+
+let num = 1;
+let sum = 0;
+
+while (num <= 50) {
+    if (num % 2 === 0) {
+        sum += num;
+    }
+    num++;
+}
+
+console.log("The sum of all even numbers between 1 and 50 is:", sum);
+
+//配列
+//Question 1 (好きなフルーツの配列を作成し、2番目の要素を出力してください。
+
+let fruits = ["Snake fruit", "Orange", "Guava", "Dragon fruit"];
+console.log(fruits[1]);
+
+//Question 2 配列から重複する値を削除するプログラムを書いてください。
+// 例えば、[1, 2, 2, 3] は [1, 2, 3] になります。
+
+let duplicates = ["flowers", "bees", "flowers", "earth", "wind", "earth", "bees"]
+
+function removeDuplicates(duplicates) {
+    return [...new Set(duplicates)];
+}
+
+console.log(removeDuplicates(duplicates));
 
