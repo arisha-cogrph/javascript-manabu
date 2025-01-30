@@ -153,3 +153,66 @@ function removeDuplicates(duplicates) {
 
 console.log(removeDuplicates(duplicates));
 
+//Object
+//Question 1 book というオブジェクトを作成し、title, author, year というプロパティを追加してください。
+// オブジェクトを出力してください。
+
+const book = {
+    title: "Hunger Games",
+    author: "Suzanne Collins",
+    year: 2013
+};
+
+//Question 2
+//book オブジェクトに getSummary というメソッドを追加し、
+// "The book [title] was written by [author] in [year]." のような文字列を返してください。
+console.log(book);
+
+function getSummary(book) {
+    return `The book "${book.title}" was written by ${book.author} in ${book.year}.`;
+}
+//so the code should be ${object name.object type}
+
+console.log(getSummary(book));
+
+
+//Thisキーワード
+//Question 1
+//person というオブジェクトを作成し、name と age というプロパティを追加してください。
+// greet というメソッドを追加し、"Hello, my name is [name]." を出力してください。
+
+const person = {
+    name: "Katniss Everdeen",
+    age: "16"
+};
+
+function greet(person) {
+    return `Hello my name is ${person.name}.`;
+}
+
+console.log(greet(person));
+
+//Question 2
+//calculator というオブジェクトを作成し、add, subtract, multiply, divide というメソッドを追加してください。
+// 各メソッドは2つの数字を受け取り、結果を返します。this を使ってオブジェクトのプロパティを参照してください。
+
+const calculator = {
+    add: function (a, b) {
+        return a + b;
+    },
+    subtract: function (a, b) {
+        return a - b;
+    },
+    multiply: function (a, b) {
+        return a * b;
+    },
+    divide: function (a, b) {
+        return a / b;
+    }
+}
+
+console.log(calculator.add(4, 7));
+console.log(calculator.multiply(10, 3));
+console.log(calculator.divide(47, 4));
+
+
